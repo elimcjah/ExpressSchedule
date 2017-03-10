@@ -2,8 +2,13 @@ let express = require('express');
 let router  = express.Router();
 let mongo   = require('mongodb');
 let assert  = require('assert');
+let hbs     = require('hbs');
 
-let url = 'mongodb://localhost:27017/scheduleApp'
+
+let url = 'mongodb://localhost:27017/scheduleApp';
+
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,7 +25,7 @@ router.get('/get-data', function(req, res, next) {
             resultArray.push(doc);
         }, function () {
             db.close();
-            res.render('employee', {items: resultArray});
+            res.render('hired', {items: resultArray});
         });
     });
 });

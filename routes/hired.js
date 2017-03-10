@@ -1,9 +1,10 @@
 let express = require('express');
 let router  = express.Router();
+let hbs     = require('hbs');
 
-/* GET Employee Page*/
+/* GET HIRED PAGE Page*/
 router.get('/', function(req, res, next) {
-    res.render('employee', {title: 'Create A New Employee' });
+    res.render('hired');
 });
 
 module.exports = router;

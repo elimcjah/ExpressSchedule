@@ -1,14 +1,23 @@
-let express = require('express');
-let path = require('path');
-//let favicon = require('serve-favicon');
-let logger = require('morgan');
+let express      = require('express');
+let path         = require('path');
+//let favicon    = require('serve-favicon');
+let logger       = require('morgan');
 let cookieParser = require('cookie-parser');
-let bodyParser = require('body-parser');
+let bodyParser   = require('body-parser');
+let hbs          = require('hbs');
 
-let index = require('./routes/index');
-let users = require('./routes/users');
-let employee = require('./routes/employee');
-let navbar  = require('./routes/navbar');
+let index       = require('./routes/index');
+let users       = require('./routes/users');
+let hired       = require('./routes/hired');
+let fired       = require('./routes/fired');
+// let moreinfo    = require('./routes/moreinfo');
+// let contact     = require('./routes/contact');
+// let directory   = require('./routes/directory');
+// let update      = require('./routes/update');
+
+
+//TRYING TO FIGURE OUT HOW TO BUILD BY COMPONENT.  SEEMS LIKE I UNDERSTAND THE PURPOSE OF ANGULAR NOW!
+// let navbar   = require('./routes/navbar');
 
 let app = express();
 
@@ -24,10 +33,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/navbar', navbar);
-app.use('/users', users);
-app.use('/employee', employee);
+app.use('/',          index);
+app.use('/users',     users);
+app.use('/hired',     hired);
+// app.use('/fired',     fired);
+// app.use('/moreinfo',  moreinfo);
+// app.use('/contact',   contact);
+// app.use('/directory', directory);
+// app.use('/update',    update);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
