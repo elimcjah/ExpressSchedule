@@ -7,9 +7,8 @@ let url = 'mongodb://localhost:27017/scheduleApp'
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    res.render('index', {title: 'Express Scheduler'});
 });
-
 
 router.get('/get-data', function(req, res, next) {
     let resultArray = [];
@@ -21,7 +20,7 @@ router.get('/get-data', function(req, res, next) {
             resultArray.push(doc);
         }, function () {
             db.close();
-            res.render('index', {items: resultArray});
+            res.render('employee', {items: resultArray});
         });
     });
 });
