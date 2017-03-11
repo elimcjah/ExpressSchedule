@@ -1,0 +1,120 @@
+<script>
+    function sortTable(n) {
+
+        let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        //Set the sorting direction to ascending:
+        dir = "asc";
+        //Make a loop that will continue until no switching has been done:
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.getElementsByTagName("tr");
+            /*Loop through all table rows (except the
+             first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                 one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("td")[n];
+                y = rows[i + 1].getElementsByTagName("td")[n];
+                /*check if the two rows should switch place,
+                 based on the direction, asc or desc:*/
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch= true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch= true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                 and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                //Each time a switch is done, increase this count by 1:
+                switchcount ++;
+            } else {
+                /*If no switching has been done AND the direction is "asc",
+                 set the direction to "desc" and run the while loop again.*/
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    };
+</script>
+
+<section class="get">
+    <div class="container-fluid">
+        <div>
+            <table id="myTable" class="table table-striped table-hover ">
+                <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ID </th>
+                    <th onclick="sortTable(1)">First Name </th>
+                    <th onclick="sortTable(2)">Last Name </th>
+                    <th onclick="sortTable(3)">Dept </th>
+                    <th onclick="sortTable(4)">Role </th>
+                    <th onclick="sortTable(5)">Phone No. </th>
+                    <th onclick="sortTable(6)">Email </th>
+                    <th onclick="sortTable(7)">Pay Type </th>
+                    <th onclick="sortTable(8)">Salary </th>
+                    <th onclick="sortTable(9)">Hourly </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{# each items }}
+                <tr>
+                    <td class="id">
+                        {{ this.id }}
+                    </td>
+                    <td class="first-name">
+                        {{ this.first_name }}
+                    </td>
+                    <td class="last-name">
+                        {{ this.last_name }}
+                    </td>
+                    <td class="dept">
+                        {{ this.dept }}
+                    </td>
+                    <td class="role">
+                        {{ this.role }}
+                    </td>
+                    <td class="phone-number">
+                        {{ this.phone_number }}
+                    </td>
+                    <td class="email">
+                        {{ this.email }}
+                    </td>
+                    <td class="hourly">
+                        {{ this.pay_type }}
+                    </td>
+                    <td class="salary">
+                        {{ this.salary }}
+                    </td>
+                    <td class="hourly">
+                        {{ this.hourly }}
+                    </td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        Refresh the table<br>
+        <a href="/get-data">LOAD DATA</a>
+    </div>
+</section>
+
+

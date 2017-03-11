@@ -18,19 +18,28 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/hired">New Hire<span
                                     class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Terminate</a></li>
-                            <li><a href="#">Directory</a></li>
+                            <li><a href="#">New Fire</a></li>
+                            <li><a href="/get-data">Directory</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                   aria-expanded="false">Calendars <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#">Yep. I said </a></li>
+                                    <li><a href="#">calendars...plural </a></li>
+                                    <li><a href="#">We have several to</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#"><b>DEVELOP & DISPLAY</b> </a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false">Financials <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Calendars will give </a></li>
+                                    <li><a href="#">time data we can use </a></li>
+                                    <li><a href="#">with hourly/salary data</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -47,119 +56,101 @@
                 </div>
             </nav>
         </header>
-        <section class="insert">
-            <div class="well">
-                <form class="form-horizontal" action="/insert" method="post">
-                    <fieldset>
-                        <legend>New Employee Form</legend>
-                        <div class="form-group">
-                            <label for="first_name" class="col-lg-2 control-label">First Name</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="first_name"
-                                       placeholder="First Name" name="first_name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="last_name" class="col-lg-2 control-label">Last Name</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="last_name"
-                                       placeholder="Last Name" name="last_name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone_number" class="col-lg-2 control-label">Phone</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="phone_number"
-                                       placeholder="555-555-5555" name="phone_number">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="email"
-                                       placeholder="jonah.hill@hollywood.com" name="email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="dept" class="col-lg-2 control-label">Department</label>
-                            <div class="col-lg-10">
-                                <select class="form-control" id="dept" name="dept">
-                                    <option> </option>
-                                    <option>Administrative</option>
-                                    <option>Management</option>
-                                    <option>Front of House</option>
-                                    <option>Kitchen</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="role" class="col-lg-2 control-label">Job Title</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="role"
-                                       placeholder="Job Title or Role" name="role">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-2 control-label">Pay Type</label>
-                            <div class="col-lg-10">
-                                <div class="pay_type">
-                                    <label>
-                                        <input type="radio" name="pay_type" id="pay_type_hourly"
-                                               value="hourly" checked=""> hourly
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="pay_type" id="pay_type_salary"
-                                               value="salary"> salary
-                                    </label>
+        <div class="container-fluid">
+            <section class="insert">
+                <div class="well">
+                    <form class="form-horizontal" action="/insert" method="post">
+                        <fieldset>
+                            <legend>New Employee Form</legend>
+                            <div class="form-group">
+                                <label for="first_name" class="col-lg-2 control-label">First Name</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="first_name"
+                                           placeholder="First Name" name="first_name">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="salary" class="col-lg-2 control-label">Salary Wage</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="salary"
-                                       placeholder="If salary, how much annually?" name="salary">
+                            <div class="form-group">
+                                <label for="last_name" class="col-lg-2 control-label">Last Name</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="last_name"
+                                           placeholder="Last Name" name="last_name">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="hourly" class="col-lg-2 control-label">Hourly Wage</label>
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" id="hourly"
-                                       placeholder="If hourly, how much per hour?" name="hourly">
+                            <div class="form-group">
+                                <label for="phone_number" class="col-lg-2 control-label">Phone</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="phone_number"
+                                           placeholder="555-555-5555" name="phone_number">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <button type="reset" class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group">
+                                <label for="email" class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="email"
+                                           placeholder="jonah.hill@hollywood.com" name="email">
+                                </div>
                             </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </section>
-        <section class="get">
-            <h3>Get Data</h3>
-            <a href="/get-data">LOAD DATA</a>
-            <div>
-                {{# each items }}
-                    <article class="item">
-                        <div>First Name:    {{ this.first_name }}</div>
-                        <div>Last Name:     {{ this.last_name }}</div>
-                        <div>Department:    {{ this.dept }}</div>
-                        <div>Role:          {{ this.role }}</div>
-                        <div>Phone:         {{ this.phone_number }}</div>
-                        <div>Email:         {{ this.email }}</div>
-                        <div>Pay Type:      {{ this.dept }}</div>
-                        <div>Salary:        {{ this.role }}</div>
-                        <div>Hourly:        {{ this.phone_number }}</div>
-                        <hr>
-                    </article>
-                {{/each}}
-            </div>
-        </section>
+                            <div class="form-group">
+                                <label for="dept" class="col-lg-2 control-label">Department</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="dept" name="dept">
+                                        <option> </option>
+                                        <option>Administrative</option>
+                                        <option>Management</option>
+                                        <option>Front of House</option>
+                                        <option>Kitchen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="role" class="col-lg-2 control-label">Job Title</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="role"
+                                           placeholder="Job Title or Role" name="role">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Pay Type</label>
+                                <div class="col-lg-10">
+                                    <div class="pay_type">
+                                        <label>
+                                            <input type="radio" name="pay_type" id="pay_type_hourly"
+                                                   value="hourly" checked=""> hourly
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="pay_type" id="pay_type_salary"
+                                                   value="salary"> salary
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="salary" class="col-lg-2 control-label">Salary Wage</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="salary"
+                                           placeholder="If salary, how much annually?" name="salary">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="hourly" class="col-lg-2 control-label">Hourly Wage</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="hourly"
+                                           placeholder="If hourly, how much per hour?" name="hourly">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </div>
     </body>
 </html>
 

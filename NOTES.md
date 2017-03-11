@@ -1,0 +1,1 @@
+I stopped at getting the Signup page set up the Submit is sending information somewhere but not back inside of the router.post for /signup.  
