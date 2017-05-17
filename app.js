@@ -66,7 +66,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Set static folder
+// Set static folders
 app.use(express.static(__dirname + '/public'));
 
 // Express Session
@@ -110,13 +110,6 @@ app.use(function(req, res, next) {
     res.locals.error_msg   = req.flash('error_msg');
     next();
 });
-
-
-
-
-
-
-
 
 
 // catch 404 and forward to error handler

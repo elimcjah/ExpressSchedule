@@ -4,10 +4,7 @@ let mongo   = require('mongodb');
 let assert  = require('assert');
 let hbs     = require('hbs');
 
-
 let url = 'mongodb://localhost:27017/scheduleApp';
-
-
 
 
 /* GET home page. */
@@ -54,14 +51,15 @@ router.post('/insert', function(req, res, next) {
 
     res.redirect('/');
 
-
 });
 
 router.post('/update', function(req, res, next) {
 
+
 });
 
 router.post('/delete', function(req, res, next) {
+
 
 });
 
