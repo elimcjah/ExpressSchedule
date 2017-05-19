@@ -26,7 +26,7 @@ let users       = require('./routes/users');
 let hired       = require('./routes/hired');
 let fired       = require('./routes/fired');
 let directory   = require('./routes/directory');
-// let signup      = require('./routes/users/signup');
+let signup      = require('./routes/signup');
 // let moreinfo = require('./routes/moreinfo');
 // let contact  = require('./routes/contact');
 // let update   = require('./routes/update');
@@ -54,7 +54,7 @@ app.use('/',          index);
 app.use('/users',     users);
 app.use('/hired',     hired);
 app.use('/directory', directory);
-// app.use('/users/signup',    signup);
+app.use('/signup',  signup);
 // app.use('/fired',     fired);
 // app.use('/update',    update);
 // app.use('/moreinfo',  moreinfo);
@@ -77,7 +77,6 @@ app.use(session({
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 // Express Validator
 app.use(expressValidator({
